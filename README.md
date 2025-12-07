@@ -48,32 +48,32 @@ DEALINGS IN THE SOFTWARE.
 
 ### 项目结构
 
-project1/
-├── linklist_cpp/
-│   ├── linkedlist.cpp
-│   ├── linkedlist.h
-│   ├── exports.def
-│   └── (可选) build_dll.bat
-├── libs/
-│   └── linklist_teaching.dll      # 必须放这个位置，供 cpp_bridge.py 加载
-├── linklist_py/
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── wsgi.py
-│   ├── urls.py
-│   ├── views.py
-│   ├── models.py
-│   ├── linked_list.py             # Python 回退实现
-│   └── cpp_bridge.py              # ctypes 桥接（加载 DLL 或回退）
-├── templates/
-│   └── linklist/index.html
-├── static/
-│   └── linklist/css/style.css
-│   └── linklist/js/app.js
-├── tests/
-├── manage.py
-├── requirements.txt
-└── README.md
+project1/ <br>
+├── linklist_cpp/<br>
+│   ├── linkedlist.cpp<br>
+│   ├── linkedlist.h<br>
+│   ├── exports.def<br>
+│   └── (可选) build_dll.bat<br>
+├── libs/<br>
+│   └── linklist_teaching.dll      # 必须放这个位置,cpp_bridge.py 加载<br>
+├── linklist_py/<br>
+│   ├── __init__.py<br>
+│   ├── settings.py<br>
+│   ├── wsgi.py<br>
+│   ├── urls.py<br>
+│   ├── views.py<br>
+│   ├── models.py<br>
+│   ├── linked_list.py             # Python 回退实现<br>
+│   └── cpp_bridge.py              # ctypes 桥接（加载 DLL 或回退）<br>
+├── templates/<br>
+│   └── linklist/index.html<br>
+├── static/<br>
+│   └── linklist/css/style.css<br>
+│   └── linklist/js/app.js<br>
+├── tests/<br>
+├── manage.py<br>
+├── requirements.txt<br>
+└── README.md<br>
 
 
 ### 开发环境
@@ -119,5 +119,6 @@ POST /linklist/api/delete_at/ — { "id":"...", "index": 2 }
 POST /linklist/api/reverse/ — { "id":"..." }
 
 GET /linklist/api/search/?id=...&value=... → { "index": 2 }
+
 
 GET /linklist/api/snapshot/?id=... → { "list": [...] }
