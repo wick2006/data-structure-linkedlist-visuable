@@ -1,0 +1,85 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>单链表教学系统 — 可视化</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{% static 'linklist/css/style.css' %}">
+</head>
+<body>
+  <header class="header">
+    <h1>单链表教学系统</h1>
+    <p class="subtitle">后端：{% if using_cpp %}<span class="ok">C++ DLL</span>{% else %}<span class="warn">Python 回退</span>{% endif %}</p>
+  </header>
+
+  <main class="container">
+    <section class="controls card">
+      <h2>操作面板</h2>
+
+      <div class="row">
+        <label>初始节点（逗号分隔）：
+          <input id="initialInput" placeholder="例如：1,2,3">
+        </label>
+        <button id="btnCreate">创建链表</button>
+        <button id="btnDestroy" class="danger">销毁当前链表</button>
+      </div>
+
+      <div class="row">
+        <label>值：
+          <input id="valueInput" placeholder="整数">
+        </label>
+        <button id="btnInsertHead">插入头</button>
+        <button id="btnInsertTail">插入尾</button>
+
+        <label>索引：
+          <input id="indexInput" placeholder="位置（从0开始）" style="width:90px;">
+        </label>
+        <button id="btnInsertAt">插入指定位置</button>
+      </div>
+
+      <div class="row">
+        <label>删除值：
+          <input id="delValueInput" placeholder="值">
+        </label>
+        <button id="btnDeleteValue">删除第一个匹配值</button>
+
+        <label>删除索引：
+          <input id="delIndexInput" placeholder="索引" style="width:90px;">
+        </label>
+        <button id="btnDeleteAt">删除指定索引</button>
+      </div>
+
+      <div class="row">
+        <button id="btnReverse">反转链表</button>
+        <label>查找值：
+          <input id="searchValueInput" placeholder="值">
+        </label>
+        <button id="btnSearch">搜索</button>
+        <button id="btnSnapshot">刷新快照</button>
+      </div>
+
+      <div class="row">
+        <div id="infoBox" class="info">当前链表 ID：<span id="currentId">—</span> &nbsp; 大小：<span id="currentSize">0</span></div>
+      </div>
+
+    </section>
+
+    <section class="visual card">
+      <h2>可视化面板</h2>
+      <div id="visArea" class="vis-area" aria-live="polite"></div>
+      <div id="logArea" class="log-area"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>202421324924 柯维 单链表可视化</small>
+  </footer>
+
+  <script>
+    // 让 app.js 知道 base path
+    window.LINKLIST_BASE = "./api/"; // 页面在 /linklist/ 下时相对路径
+  </script>
+  <script src="{% static 'linklist/js/app.js' %}"></script>
+</body>
+</html>

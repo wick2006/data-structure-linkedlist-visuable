@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>单链表教学系统</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f3f3;
+        }
+
+        .navbar {
+            background: #4e73df;
+            padding: 15px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px #ccc;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            background: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: #2e59d9;
+        }
+
+        .input-box {
+            padding: 8px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            width: 120px;
+        }
+
+        /* 链表可视化节点 */
+        .node {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #4e73df;
+            color: white;
+            border-radius: 8px;
+            margin-right: 10px;
+            position: relative;
+            transition: transform .2s;
+        }
+
+        .node:hover {
+            transform: scale(1.1);
+        }
+
+        .arrow {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .empty {
+            color: #777;
+            font-size: 17px;
+            padding: 10px;
+        }
+    </style>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="navbar">
+        单链表可视化教学系统（C++ + ctypes + Django）
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

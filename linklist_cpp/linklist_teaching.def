@@ -1,0 +1,14 @@
+LIBRARY "linkedlist.dll" BASE=0x3838c0000
+EXPORTS
+    ll_create @1
+    ll_delete_at @2
+    ll_delete_value @3
+    ll_destroy @4
+    ll_free_array @5
+    ll_insert_at @6
+    ll_insert_head @7
+    ll_insert_tail @8
+    ll_reverse @9
+    ll_search @10
+    ll_size @11
+    ll_to_array @12

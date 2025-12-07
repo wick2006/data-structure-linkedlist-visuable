@@ -1,0 +1,14 @@
+LIBRARY linkedlist
+EXPORTS
+ll_create
+ll_destroy
+ll_insert_head
+ll_insert_tail
+ll_insert_at
+ll_delete_value
+ll_delete_at
+ll_reverse
+ll_search
+ll_size
+ll_to_array
+ll_free_array

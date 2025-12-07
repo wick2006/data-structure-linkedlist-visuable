@@ -1,0 +1,31 @@
+# ------ Compiler & Tools ------
+CXX = g++
+LD = g++
+RC = windres
+
+# ------ Paths ------
+INC_DIRS = -I.
+LIB_DIRS = 
+SRC = linkedlist.cpp
+OBJ = $(SRC:.cpp=.o)
+
+# ------ Output ------
+TARGET = ../libs/linklist_teaching.dll
+
+# ------ Flags ------
+CXXFLAGS = -std=c++17 -O2 -Wall -Wextra -march=x86-64
+LDFLAGS = -shared -Wl,--kill-at -Wl,--enable-stdcall-fixup -Wl,"--output-def=linklist_teaching.def" -Wl,"--image-base=0x10000000"
+DEF_FILE = exports.def
+
+# ------ Rules ------
+all: $(TARGET)
+
+$(TARGET): $(OBJ) $(DEF_FILE)
+	$(LD) $(OBJ) -shared -o $(TARGET) $(CXXFLAGS) -Wl,"$(DEF_FILE)"
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	del /Q *.o
+	del /Q $(TARGET)
